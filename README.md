@@ -1,11 +1,14 @@
 # terraform-simple-acm
-Wrapper around ACM stuff, mostly because I want to play with Terraform modules
+Wrapper around ACM stuff.
 
+Exists partially because I'm lazy, and don't want to have to define this stuff every time I need it.
+
+But mostly, it exists because I want to play with Terraform modules.
 
 Works on the assumption that you're using Route53 for DNS verification
 
 
-Usage:
+## Usage
 
 ```
 module "simple_acm" {
@@ -29,6 +32,12 @@ resource foo "foo" {
 }
 ```
 
-Outputs:
+## Outputs
 
 `arn` - arn of the ACM certificate
+
+## Limitations
+
+Apparently, when you create a cert with ACM, it's not available to use immediatelly.
+
+In my case, just terraforming a second time works
