@@ -22,4 +22,13 @@ module "simple_acm" {
     aws = "aws.us-east-1"
   }
 }
+
+
+resource foo "foo" {
+  acm_certificate_arm = "${module.simple_acm.arn}"
+}
 ```
+
+Outputs:
+
+`arn` - arn of the ACM certificate
